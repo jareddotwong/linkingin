@@ -1,14 +1,14 @@
 <?php
 
-foreach($_GET as $key => $value)
-     {
-     echo $key . " : " . $value . "<br />\r\n";
-     }
-
 require('../vendor/autoload.php');
 
 $app = new Silex\Application();
 $app['debug'] = true;
+
+foreach($_GET as $key => $value)
+     {
+     echo $key . " : " . $value . "<br />\r\n";
+     }
 
 // Register the monolog logging service
 $app->register(new Silex\Provider\MonologServiceProvider(), array(
